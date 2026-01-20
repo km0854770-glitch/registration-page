@@ -1,0 +1,83 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<style>
+:root{
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --text:#000000;
+}
+.dark{
+  --bg:#1e1e1e;
+  --card:#2c2c2c;
+  --text:#ffffff;
+}
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.dashboard{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  height:100vh;
+}
+
+.sidebar{
+  background:var(--card);
+  padding:15px;
+}
+
+.main{
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:6px;
+}
+
+button{
+  width:100%;
+  padding:8px;
+  margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+  <div class="sidebar">
+    <h3>Admin</h3>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+
+  <div class="main">
+    <div class="card">Users</div>
+    <div class="card">Revenue</div>
+    <div class="card">Reports</div>
+    <div class="card">Settings</div>
+  </div>
+</div>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
+```
